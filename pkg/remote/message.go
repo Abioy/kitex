@@ -290,12 +290,8 @@ type transInfo struct {
 }
 
 func (ti *transInfo) zero() {
-	for k := range ti.intInfo {
-		delete(ti.intInfo, k)
-	}
-	for k := range ti.strInfo {
-		delete(ti.strInfo, k)
-	}
+	ti.intInfo = nil
+	ti.strInfo = nil
 }
 
 // TransIntInfo implements the TransInfo interface.
